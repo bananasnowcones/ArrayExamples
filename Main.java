@@ -40,6 +40,7 @@ class Main
             System.out.println("ar1[" +i+ "] = " +ar1[i]);
             
             
+            
         /*
          * Task 2.  Create a new array called ar2.
          *          Copy the elements of ar1 into ar2.
@@ -58,10 +59,19 @@ class Main
         for (int i=0; i<ar2.length; i++)
             System.out.println("ar2["+i+"] = "+ar2[i]);
         
+            
+            
         /* 
          * Task 3. Add 1 to each element in ar1.  Print it out below
          */
+        System.out.println("***Task 3***");
         
+        for (int i=0; i<ar1.length; i++)
+        {
+            ar1[i] = ar1[1] +1;
+        }
+        
+        System.out.println(ar1[1]);
 
         
         
@@ -72,12 +82,37 @@ class Main
          *         ar1: 1 2 3
          *         ar3: 1 2 3 0 1 2 3
          */
+        System.out.println("***Task 4***");
+        int[] ar3 = new int[ar1.length*2];
+        
+        for(int i=0; i<ar1.length; i++)
+        {
+            ar3[i] = ar1[i];
+        }
+        
+        for(int i=0; i<ar1.length; i++)
+        {
+            ar3[i+(ar1.length)] = ar1[i];
+        }
+        
         
         
         /*
          * Task 5.  Switch the first and last element of ar1.
          *          print out the new ar1.  Then switch them back
          */
+        
+        System.out.println("***Task 5***");
+        int sheep = ar1[0];
+        ar1[0] = ar1[n-1];
+        ar1[n-1] = sheep;
+        for(int i=0; i<n; i++)
+        {
+            System.out.println(ar1[i]);
+            
+        }
+        
+        
         
         /*
          * Task 6A. Print the 2nd to (n-1)th elements of ar1
