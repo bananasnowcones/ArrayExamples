@@ -45,21 +45,32 @@ class Main
          * Task 2.  Create a new array called ar2.
          *          Copy the elements of ar1 into ar2.
          */
-        System.out.println("*** ar2 ***");
-        
-        int[] ar2 = new int[ar1.length];
         
         // int[] ar2 = ar1.clone(); making two independent arrays
         // ar2=ar1 = copies ar1 and all of it's changes
         //ar1[3]=1000;
         
-        for (int i=0; i<ar2.length; i++)
-            System.out.println("ar1["+i+"] = "+ar1[i]);
-        //
-        for (int i=0; i<ar2.length; i++)
-            System.out.println("ar2["+i+"] = "+ar2[i]);
-        
-            
+         System.out.println("** ar2 **");
+ 
+         int[] ar2;
+ 
+         // 
+         // ar2 = ar1.clone() also does this
+         // ar2 = ar1, just copies the address so you are not copying the array
+         //
+         ar2= new int[ ar1.length ]; // sets the size of the array to equal ar1.
+         for (int i=0 ; i<ar2.length ; i++)
+         {
+             ar2[i]=ar1[i];
+            }  
+ 
+            // ar2[ i ] = i 
+            for (int i=0 ; i<ar2.length ; i++)
+                System.out.println("ar2[" + i + "] = "+ar2[i]);
+            // ar2[ i ] = i
+ 
+            // Just copies the memory location so ar2 and ar1 are literally the same
+            // ar2=ar1
             
         /* 
          * Task 3. Add 1 to each element in ar1.  Print it out below
@@ -68,10 +79,13 @@ class Main
         
         for (int i=0; i<ar1.length; i++)
         {
-            ar1[i] = ar1[1] +1;
+            ar1[i] = ar1[i] +1;
+            
         }
-        
-        System.out.println(ar1[1]);
+ 
+
+        for (int i=0 ; i<ar1.length ; i++)
+            System.out.println("ar1[" + i + "] = "+ar1[i]);        
 
         
         
@@ -95,7 +109,8 @@ class Main
             ar3[i+(ar1.length)] = ar1[i];
         }
         
-        
+        for (int i=0 ; i<ar3.length ; i++)
+            System.out.println("ar3[" + i + "] = "+ar3[i]);
         
         /*
          * Task 5.  Switch the first and last element of ar1.
@@ -104,8 +119,8 @@ class Main
         
         System.out.println("***Task 5***");
         int sheep = ar1[0];
-        ar1[0] = ar1[n-1];
-        ar1[n-1] = sheep;
+        ar1[0] = ar1[ar1.length-1];
+        ar1[ar1.length-1] = sheep;
         for(int i=0; i<n; i++)
         {
             System.out.println(ar1[i]);
@@ -113,14 +128,29 @@ class Main
         }
         
         
+        // The Restoration of the rightful heir
+        sheep=ar1[0];
+        ar1[0]=ar1[ar1.length-1];
+        ar1[ar1.length-1]=sheep;
         
-        /*
-         * Task 6A. Print the 2nd to (n-1)th elements of ar1
-         * Task 6B: Print out just the odd numbers in ar1
-         * Task 6C: Print out the elements of ar1 when
-         *          the indices are multiples of 3
-         *         
-         */
+       
+         //* Task 6A. Print the 2nd to (n-1)th elements of ar1
+         System.out.println("**Task6A**");
+         for (int i=1 ; i<ar1.length-1 ; i++)
+         System.out.println(ar1[i]);
+         
+         //* Task 6B: Print out just the odd numbers in ar1
+         System.out.println("**Task 6B***");
+         for (int i=0; i<ar1.length; i++)
+           if (ar1[i]%2==1)
+              System.out.println(ar1[i]);
+           
+         //* Task 6C: Print out the elements of ar1 when
+         //          the indices are multiples of 3
+         System.out.println("**Task 6C***");
+        for (int i=0; i<ar1.length; i++)
+           if (ar1[i]%3==0)
+              System.out.println(ar1[i]);
         
         /*
          * Task 7.  For each element in ar1, 
@@ -133,6 +163,11 @@ class Main
          *          ar[2]=30
          *          ar[3]=4
          */
+        for (int i=0; i<ar1.length; i++)
+           if (ar1[i]%2==0)
+              ar1[i]=ar1[1]*10;
+        for (int i=0; i<ar1.length; i++)
+           System.out.println(ar1[i]);
         
          /*
           * Task 8
