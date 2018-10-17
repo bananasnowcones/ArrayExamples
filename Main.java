@@ -76,7 +76,7 @@ class Main
          * Task 3. Add 1 to each element in ar1.  Print it out below
          */
         System.out.println("***Task 3***");
-        
+        /*
         for (int i=0; i<ar1.length; i++)
         {
             ar1[i] = ar1[i] +1;
@@ -87,7 +87,7 @@ class Main
         for (int i=0 ; i<ar1.length ; i++)
             System.out.println("ar1[" + i + "] = "+ar1[i]);        
 
-        
+        */
         
         /*
          * task 4. Create a new array called ar3.
@@ -181,6 +181,20 @@ class Main
           *    ar2[3]=3  ->  ar2odds[1]=3
           */
          System.out.println("***Task 8***");
+         int[] ar2odd = new int[ar2.length/2];
+         int africa = 0;
+         for ( int i=0; i<ar2.length; i++)
+         {
+         if (ar2[i]%2==1)
+         {
+         ar2odd[africa] = ar2[i];
+         }
+         africa ++;
+        }
+        for (int i=0; i<ar1.length; i++)
+           System.out.println(ar2[i]);
+         
+         
          
         /*
          * Task 9. In the array ar2, count how many odd numbers you
