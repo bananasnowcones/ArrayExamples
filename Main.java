@@ -208,7 +208,7 @@ class Main
         
         System.out.println(" ** Task 9 **");
            int nignogs=0;
-           int[] ar4 = new int[ar2.length/2]; 
+           int[] ar4 = new int[ar2.length]; 
            for ( int i=0 ; i<ar2.length ; i++)
            {
                
@@ -232,19 +232,54 @@ class Main
          */
         System.out.println(" ** Task 10 **");
         
-        int macnut = ar4[0];
-        ar4[0] = macnut;
+         System.out.println("Original ar4");
+         for (int i=0 ; i<ar4.length ; i++)
+             System.out.println(ar4[i]);
         
-        for (int i=ar4.length-1; i>0; i--)
-        {
-            ar4[i] = ar4[i-1];
-        }
-        for (int i=0 ; i<k ; i++)
-            System.out.println(ar4[i]);
+         int temp10=ar4[ar4.length-1]; // temp10 is the last value of ar4
+         
+         for (int i=ar4.length-1 ; i>0 ; i--) //going backwards works best
+            ar4[i]=ar4[i-1];   //does not create "A A A A A"
+         
+         ar4[0]=temp10; //converting first value as the last
+         
+         // OR ELSE MAKE A FRESH ARRAY -- EX: b[i+1] = a[i];
+            
+         System.out.println("New ar4");
+         for (int i=0 ; i<ar4.length ; i++)
+             System.out.println(ar4[i]);
+             
+        /* 
+         * for (i=0; i<n; i++)
+         * b[i+1] = a[i]; //b is the new array that shifts the a array to the right
+         * 
+         * for (i=0; i<n; i++)
+         * a[i] = b[i]; //we're changing a to b, so now a is shifted to right
+         * 
+         * //probably here we bust out the first value and print a;
+         */
         
         /*
          * Task 11.  Reverse the order of elements in ar2
          */
+        
+          System.out.println("** Task 11 **");
+        for (int i=0 ; i<ar2.length ; i++)
+            System.out.println("ar2["+i+"] = "+ar2[i]);
+            
+        int ar2half = ar2.length/2;
+        System.out.println(ar2half);
+        int task11Temp;
+        for (int i=0 ; i<ar2half ; i++)
+        {
+            task11Temp = ar2[i];
+            System.out.println(" "+i+":"+(ar2.length-i));
+            ar2[i] = ar2[ar2.length-1-i];
+            ar2[ar2.length-1-i]=task11Temp;
+        }
+               
+        for (int i=0 ; i<ar2.length ; i++)
+            System.out.println("ar2["+i+"] = "+ar2[i]);
         
         
         /*
