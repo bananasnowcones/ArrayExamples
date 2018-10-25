@@ -270,12 +270,12 @@ class Main
         int ar2half = ar2.length/2;
         System.out.println(ar2half);
         int task11Temp;
-        for (int i=0 ; i<ar2half ; i++)
+        for (int i=0 ; i<ar2half ; i++) // this is so that it doesnt repeat halfway
         {
             task11Temp = ar2[i];
             System.out.println(" "+i+":"+(ar2.length-i));
             ar2[i] = ar2[ar2.length-1-i];
-            ar2[ar2.length-1-i]=task11Temp;
+            ar2[ar2.length-1-i]=task11Temp; // this is necessary for counting up and no repeats
         }
                
         for (int i=0 ; i<ar2.length ; i++)
@@ -305,6 +305,30 @@ class Main
          *  
          *  Count how many words have more than 5 letters.
          */
+        String[] ar5 = new String[16];
+        int [] ar6 = new int[ar5.length];
+        
+        ar5[0]="Four";
+        ar5[1]="score";
+        ar5[2]="and";
+        ar5[3]="seven";
+        ar5[4]="years";
+        ar5[5]="ago";
+        ar5[6]="our";
+        ar5[7]="fathers";
+        ar5[8]="brought";
+        ar5[9]="forth";
+        ar5[10]="on";
+        ar5[11]="this";
+        ar5[12]="continent";
+        ar5[13]="a";
+        ar5[14]="new";
+        ar5[15]="nation";
+        
+        
+        for (int i = 0; i<ar5.length; i++)
+            ar6[i] = ar5[i].length();
+        
         
         /*
          * Task 13
