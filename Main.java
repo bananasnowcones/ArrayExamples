@@ -324,11 +324,39 @@ class Main
         ar5[13]="a";
         ar5[14]="new";
         ar5[15]="nation";
+        int count5=0;
+ 
         
-        
-        for (int i = 0; i<ar5.length; i++)
-            ar6[i] = ar5[i].length();
-        
+        for (int i=0 ; i<ar5.length ; i++)
+        {
+             // ar5[i] is a String object
+             // ar5[2] is "and"
+             // ar5[2].length() is 3.
+ 
+             if (ar5[i].length()>5)
+             count5++;
+        }
+ 
+         System.out.println(" TASK 12: is " + count5);
+         /*
+         * Boss Level Task 12. Create an array with just words
+         * of length greater than 5
+         */
+        k=0; // previously defined
+        String[] task12Greater= new String[count5];
+        for (int i=0 ; i<ar5.length ; i++)
+        {
+            if (ar5[i].length() >5)
+            {
+                task12Greater[k]=ar5[i];
+                k++;
+            }
+        }
+ 
+        for (int i=0 ; i<task12Greater.length ; i++)
+        {
+            System.out.println(" 12 BOSS["+i+"] :"+task12Greater[i]);
+        }
         
         /*
          * Task 13
@@ -344,6 +372,23 @@ class Main
          * Use a for loop to print out the names of monster that start with
          * a vowel
          */
+        String[] monsterArray={ "Cookie",  "Grover",  "Oscar the Grouch" , "Elmo", "Rosita"}; // 
+
+        // You can get each monster by
+        String s =monsterArray[0]; 
+
+
+        // This gets the first character of each array and makes it lower case
+        char c=monsterArray[i].toLowerCase().charAt(0);
+
+            // Then use the code below to see....
+        if (c=='a' || c=='e' .......
+
+        // You need to use a char because you get 
+
+
+        if ( s.toLowerCase().startsWith("a") ||
+        s.toLowerCase().startsWith("e") ...
         
          /*
           * Task 14
